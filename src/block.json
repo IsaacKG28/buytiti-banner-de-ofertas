@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "buytiti-banner-de-ofertas/buytiti-banner-de-ofertas",
+	"version": "0.1.0",
+	"title": "Buytiti-banner-de-ofertas",
+	"category": "widgets",
+	"icon": "format-image",
+	"description": "Bloque para añadir un carousel a buytiti.com",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "buytiti-banner-de-ofertas",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"slides": {
+		  "type": "array",
+		  "default": [
+			{
+			  "image": ""
+			},
+			{
+			  "image": ""
+			}
+		  ],
+		  "items": {
+			"type": "object",
+			"default": {
+			  "image": ""
+			},
+			"properties": {
+			  "image": {
+				  "type": "string"
+			  }
+			}
+		  }
+		}
+	  }
+}

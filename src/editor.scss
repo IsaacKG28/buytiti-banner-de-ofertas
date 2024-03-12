@@ -1,0 +1,217 @@
+.carousel-container-ofertas {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.my-carousel-ofertas {
+	position: relative;
+	overflow: hidden;
+}
+.carousel-container-ofertas {
+	display: flex;
+}
+.slide-ofertas {
+	flex: 0 0 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	display: none;
+}
+.slide-ofertas.prev {
+	transform: translateX(-100%);
+	animation: slideOutLeft 0.5s forwards;
+}
+.slide-ofertas.active {
+	display: block;
+	animation: slideInRight 0.5s forwards;
+}
+.slide-ofertas.next {
+	transform: translateX(100%);
+	animation: slideOutRight 0.5s forwards;
+}
+@keyframes slideInRight {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+@keyframes slideOutLeft {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+@keyframes slideOutRight {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(100%);
+	}
+}
+  .container-gti-ofertas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 30rem !important;
+	.gimage-ofertas{
+		width: 100% !important;
+		height: 100% !important;
+	  }
+	
+}
+
+  .box-h1-ofertas{
+	font-size: 2.8rem !important;
+  }
+
+  .box-h5-ofertas{
+	font-size: 1.7rem !important;
+	margin-top: -1rem !important;
+  }
+  .box-p-ofertas{
+	margin-top: -.5rem !important;
+  }
+
+.carousel-container-ofertas {
+	position: relative !important;
+}
+
+/*** ESTILOS BOTÓN GROW SKEW ***/
+.ov-btn-grow-skew-ofertas {
+	background: #1a1a1a; /* color de fondo */
+	color: white; /* color de fuente */
+	border: 1px solid black ; /* tamaño y color de borde */
+	padding: 16px 20px;
+	border-radius: 13px; /* redondear bordes */
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	height: 2rem;
+  align-items: center;
+  display: flex;
+  width: 6.5rem;
+  text-decoration: none !important;
+  }
+  .ov-btn-grow-skew-ofertas:hover {
+	color: #1a1a1a;/* color de fuente hover */
+	border: 1px solid white;
+	cursor: pointer;
+  }
+  .ov-btn-grow-skew-ofertas::after {
+	content: "";
+	background: white; /* color de fondo hover */
+	position: absolute;
+	z-index: -1;
+	padding: 16px 20px;
+	display: block;
+	left: -20%;
+	right: -20%;
+	top: 0;
+	bottom: 0;
+	transform: skewX(-45deg) scale(0, 1);
+	transition: all 0.3s ease;
+  }
+  .ov-btn-grow-skew-ofertas:hover::after {
+	transition: all 0.3s ease-out;
+	transform: skewX(-45deg) scale(1, 1);
+  }
+  @keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.h1-slide-down-ofertas {
+    animation-name: slideDown;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.p-slide-right-ofertas {
+    animation-name: slideRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.img-zoom-in-ofertas {
+	width: 100%;
+    animation-name: zoomIn;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-out;
+	height: 98%;
+}
+.carousel-container-ofertas {
+    position: relative;
+}
+.slider-nav-ofertas {
+	display: flex;
+	justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+.nav-dot-ofertas{
+	margin-right: .3rem;
+	width: .3rem;
+    height: .3rem;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+	padding: 7px !important;
+}
+.nav-dot-ofertas:hover{
+	cursor: pointer;
+}
+@media screen and (max-width: 400px) {
+    .container-gti-ofertas {
+		display: flex;
+		height: 10rem !important;
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+	.img-zoom-in-ofertas{
+		width: 100%;
+		animation-name: zoomIn;
+		animation-duration: 1.3s;
+		animation-timing-function: ease-out;
+		height: 120px;
+	  }
+}
+@media screen and (max-width: 900px) {
+	.container-gti-ofertas {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 20rem !important;
+	  }
+	.container-gti-ofertas .gimage-ofertas {
+		width: 100% !important;
+		height: 20rem !important;
+	}
+}
