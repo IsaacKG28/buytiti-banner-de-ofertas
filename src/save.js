@@ -10,11 +10,6 @@ export default function save({ attributes }) {
 						className="slide-ofertas"
 						style={{ backgroundColor: slide.color }}
 					>
-						{index === 0 && (
-							<div className="countdown-container">
-								{/* Aquí va tu contador de cuenta regresiva */}
-							</div>
-						)}
 						<div className="container-gti-ofertas">
 							<div className="gtex-ofertas">
 								<div className="cont-h1-ofertas">
@@ -28,7 +23,9 @@ export default function save({ attributes }) {
 								</div>
 							</div>
 							<div className="gimage-ofertas">
-								<img className="img-zoom-in-ofertas" src={slide.image} alt="" />
+								<a href={slide.imageURL} target="_blank" rel="noopener noreferrer">
+									<img className="img-zoom-in-ofertas" src={slide.image} alt="" />
+								</a>
 							</div>
 						</div>
 					</div>

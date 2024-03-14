@@ -18,26 +18,74 @@
 	"viewScript": "file:./view.js",
 	"attributes": {
 		"slides": {
-		  "type": "array",
-		  "default": [
-			{
-			  "image": ""
-			},
-			{
-			  "image": ""
+			"type": "array",
+			"default": [
+				{
+					"image": "",
+					"imageURL": "",
+					"title": "",
+					"h5": "",
+					"p": "",
+					"color": "",
+					"h1Color": "",
+					"h5Color": "",
+					"pColor": ""
+				},
+				{
+					"image": "",
+					"imageURL": "",
+					"title": "",
+					"h5": "",
+					"p": "",
+					"color": "",
+					"h1Color": "",
+					"h5Color": "",
+					"pColor": ""
+				}
+			],
+			"items": {
+				"type": "object",
+				"default": {
+					"image": "",
+					"imageURL": "",
+					"title": "",
+					"h5": "",
+					"p": "",
+					"color": "",
+					"h1Color": "",
+					"h5Color": "",
+					"pColor": ""
+				},
+				"properties": {
+					"image": {
+						"type": "string"
+					},
+					"imageURL": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"h5": {
+						"type": "string"
+					},
+					"p": {
+						"type": "string"
+					},
+					"color": {
+						"type": "string"
+					},
+					"h1Color": {
+						"type": "string"
+					},
+					"h5Color": {
+						"type": "string"
+					},
+					"pColor": {
+						"type": "string"
+					}
+				}
 			}
-		  ],
-		  "items": {
-			"type": "object",
-			"default": {
-			  "image": ""
-			},
-			"properties": {
-			  "image": {
-				  "type": "string"
-			  }
-			}
-		  }
 		}
-	  }
+	}
 }

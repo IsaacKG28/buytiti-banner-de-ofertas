@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { InspectorControls, RichText } from "@wordpress/block-editor";
-import { PanelBody } from "@wordpress/components";
+import { PanelBody, TextControl } from "@wordpress/components";
 import { MediaUpload } from "@wordpress/block-editor";
 import { Button } from "@wordpress/components";
 
@@ -11,6 +11,11 @@ const CarouselOfertas = ({ attributes, setAttributes }) => {
 		const newSlidesOfertas = attributes.slides.map((slide, i) =>
 			i === index ? { ...slide, [key]: newValue } : slide,
 		);
+		setAttributes({ ...attributes, slides: newSlidesOfertas });
+	};
+
+	const removeSlide = (index) => {
+		const newSlidesOfertas = attributes.slides.filter((_, i) => i !== index);
 		setAttributes({ ...attributes, slides: newSlidesOfertas });
 	};
 
@@ -40,24 +45,39 @@ const CarouselOfertas = ({ attributes, setAttributes }) => {
 									<button onClick={open}>Seleccionar imagen</button>
 								)}
 							/>
+							<TextControl
+								label="URL de la imagen"
+								value={slide.imageURL}
+								onChange={(newURL) => updateSlideContentOfertas(index, "imageURL", newURL)}
+							/>
+							<Button
+								isDestructive
+								onClick={() => removeSlide(index)}
+							>
+								Eliminar Slide
+							</Button>
 						</React.Fragment>
 					))}
-						<Button
-							isPrimary
-							onClick={() => {
-								if (attributes.slides.length < 2) {
-									const newSlidesOfertas = [...attributes.slides, {
-										image: "",
-									}];
-									setAttributes({ ...attributes, slides: newSlidesOfertas });
-								} else {
-									alert('Solo puedes agregar 2 imágenes en este carousel.');
-								}
-							}}
-						>
-							Añadir Slide Ofertas
-						</Button>
-
+					<Button
+						isPrimary
+						onClick={() => {
+							const newSlide = {
+								image: "",
+								imageURL: "",
+								title: "",
+								h5: "",
+								p: "",
+								color: "",
+								h1Color: "",
+								h5Color: "",
+								pColor: "",
+							};
+							const newSlidesOfertas = [...attributes.slides, newSlide];
+							setAttributes({ ...attributes, slides: newSlidesOfertas });
+						}}
+					>
+						Añadir Slide Ofertas
+					</Button>
 				</PanelBody>
 			</InspectorControls>
 			<div className="carousel-container-ofertas">
@@ -95,7 +115,9 @@ const CarouselOfertas = ({ attributes, setAttributes }) => {
 								</div>
 							</div>
 							<div className="gimage-ofertas">
-								<img className="img-zoom-in-ofertas mi-clase-personalizada" src={slide.image} alt="" />
+								<a href={slide.imageURL} target="_blank" rel="noopener noreferrer">
+									<img className="img-zoom-in-ofertas" src={slide.image} alt="" />
+								</a>
 							</div>
 						</div>
 					</div>
