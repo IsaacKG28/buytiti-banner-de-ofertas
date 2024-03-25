@@ -31,6 +31,8 @@ const CarouselOfertas = ({ attributes, setAttributes }) => {
 
 	return (
 		<div className="my-carousel-ofertas">
+			<div className="arrow arrow-left" onClick={() => setCurrentSlideOfertas((currentSlideOfertas - 1 + attributes.slides.length) % attributes.slides.length)}></div>
+            <div className="arrow arrow-right" onClick={() => setCurrentSlideOfertas((currentSlideOfertas + 1) % attributes.slides.length)}></div>
 			<InspectorControls>
 				<PanelBody title="Configuración de Slides Ofertas">
 					{attributes.slides.map((slide, index) => (
@@ -97,22 +99,8 @@ const CarouselOfertas = ({ attributes, setAttributes }) => {
 										style={{ color: slide.h1Color }}
 									/>
 								</div>
-								<div className="cont-h5-ofertas">
-									<RichText.Content
-										className="box-h5-ofertas"
-										tagName="h5"
-										value={slide.h5}
-										style={{ color: slide.h5Color }}
-									/>
-								</div>
-								<div className="cont-p-ofertas">
-									<RichText.Content
-										className="box-p-ofertas p-slide-right-ofertas"
-										tagName="p"
-										value={slide.p}
-										style={{ color: slide.pColor }}
-									/>
-								</div>
+								
+								
 							</div>
 							<div className="gimage-ofertas">
 								<a href={slide.imageURL} target="_blank" rel="noopener noreferrer">
@@ -122,7 +110,8 @@ const CarouselOfertas = ({ attributes, setAttributes }) => {
 						</div>
 					</div>
 				))}
-				<div className="slider-nav-ofertas">
+			</div>
+			<div className="slider-nav-ofertas">
 					{attributes.slides.map((_, index) => (
 						<button
 							key={index}
@@ -130,7 +119,6 @@ const CarouselOfertas = ({ attributes, setAttributes }) => {
 							onClick={() => setCurrentSlideOfertas(index)}
 						/>
 					))}
-				</div>
 			</div>
 		</div>
 	);
